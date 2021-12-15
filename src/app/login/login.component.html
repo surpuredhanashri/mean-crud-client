@@ -1,0 +1,43 @@
+<section class="wrapper">
+  <div class=" fadeInDown ">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first " >
+        <i class="fa-3x bi bi-person-circle"></i>
+        <!-- <img src="" id="icon" alt="User Icon" /> -->
+      </div>
+
+      <!-- Login Form -->
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <div> <input type="text" id="login" class="fadeIn third" name="login" formControlName="name" placeholder="name">
+        </div>
+        <div><small style="color: red;" class="p-error"
+            *ngIf="this.loginForm.controls['name'].invalid&&isSubmitted">name is required</small>
+        </div>
+        <div> <input type="text" id="password" class="fadeIn third" name="login" formControlName="password"
+            placeholder="password"></div>
+        <div> <small style="color: red;" class="p-error"
+            *ngIf="this.loginForm.controls['password'].invalid&&isSubmitted">Password is required</small>
+        </div>
+
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
+      <div id="formFooter">
+        <span>create an account </span>
+        <a class="underlineHover" routerLink="/register">Register</a>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
